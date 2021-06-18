@@ -15,6 +15,8 @@ const Login = () =>{
 
   async function handleAuthenticated(authClient) {
     const identity = await authClient.getIdentity();
+    // this identity will contain user private key and public key
+    console.log(identity)
     setIsLogin(true)
   }
 
@@ -32,7 +34,8 @@ const Login = () =>{
       onSuccess: async () => {
         handleAuthenticated(authClient);
       },
-      identityProvider: "http://localhost:8000/?canisterId=renrk-eyaaa-aaaaa-aaada-cai"
+      // this need to be your local internet identity provider canister id for local development
+      identityProvider: "http://localhost:8000/?canisterId=qvhpv-4qaaa-aaaaa-aaagq-cai"
     })
   };
 
