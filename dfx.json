@@ -1,0 +1,34 @@
+{
+  "canisters": {
+    "plumbum": {
+      "main": "src/plumbum/main.mo",
+      "type": "motoko"
+    },
+    "plumbum_assets": {
+      "dependencies": [
+        "plumbum"
+      ],
+      "frontend": {
+        "entrypoint": "src/plumbum_assets/src/index.html"
+      },
+      "source": [
+        "src/plumbum_assets/assets",
+        "dist/plumbum_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": ""
+    }
+  },
+  "dfx": "0.7.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
